@@ -1,4 +1,4 @@
-package ru.otus.hw.dao;
+package ru.vavtech.hw.dao;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import ru.vavtech.hw.config.TestFileNameProvider;
-import ru.vavtech.hw.dao.CsvQuestionDao;
+import ru.vavtech.hw.config.AppProperties;
 import ru.vavtech.hw.domain.Answer;
 import ru.vavtech.hw.domain.Question;
 import ru.vavtech.hw.exceptions.QuestionReadException;
@@ -21,7 +20,7 @@ import static org.mockito.Mockito.when;
 class CsvQuestionDaoTest {
 
     @Mock
-    private TestFileNameProvider fileNameProvider;
+    private AppProperties fileNameProvider;
 
     @InjectMocks
     private CsvQuestionDao csvQuestionDao;
