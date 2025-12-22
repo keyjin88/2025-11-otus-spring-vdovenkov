@@ -32,8 +32,7 @@ class CsvQuestionDaoTest {
 
     @Test
     void testFindAll() {
-        String testFileName = "questions.csv";
-        when(fileNameProvider.getTestFileName()).thenReturn(testFileName);
+        when(fileNameProvider.getTestFileName()).thenReturn("questions_en.csv");
 
         List<Question> questions = csvQuestionDao.findAll();
 
