@@ -1,24 +1,26 @@
 package ru.vavtech.hw.config;
 
 import lombok.Getter;
-import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.bind.ConstructorBinding;
 
 import java.util.Locale;
 
-@Setter
 @ConfigurationProperties(prefix = "application")
+@Getter
 public class AppProperties implements TestConfig, TestFileNameProvider {
 
-    private Integer rightAnswersCountToPass;
+    private final Integer rightAnswersCountToPass;
 
-    private String testFileName;
+    private final String testFileName;
 
-    @Getter
-    private Locale locale;
+    private final Locale locale;
 
-    public void setLocale(String localeString) {
-        this.locale = Locale.forLanguageTag(localeString.replace("_", "-"));
+    @ConstructorBinding
+    public AppProperties(Integer rightAnswersCountToPass, String testFileName, String locale) {
+        this.rightAnswersCountToPass = rightAnswersCountToPass;
+        this.testFileName = testFileName;
+        this.locale = Locale.forLanguageTag(locale.replace("_", "-"));
     }
 
     @Override
