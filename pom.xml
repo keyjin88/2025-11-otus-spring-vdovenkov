@@ -21,6 +21,7 @@
         <module>hw1</module>
         <module>hw2</module>
         <module>hw3</module>
+        <module>hw4</module>
     </modules>
 
     <properties>
@@ -35,6 +36,7 @@
         <junit.version>6.0.1</junit.version>
         <mockito.version>5.21.0</mockito.version>
         <assertj.version>3.27.6</assertj.version>
+        <spring.shell.version>3.4.0</spring.shell.version>
         <checkstyle-plugin.version>3.6.0</checkstyle-plugin.version>
         <checkstyle.version>12.3.0</checkstyle.version>
         <checkstyle.config.url>
