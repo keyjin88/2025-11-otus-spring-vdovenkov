@@ -1,4 +1,4 @@
 spring:
   liquibase:
-    change-log: classpath:db/changelog/test-changelog.xml
+    change-log: classpath:db/changelog/test-changelog.sql
     contexts: test
