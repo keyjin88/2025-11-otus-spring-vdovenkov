@@ -1,4 +1,7 @@
 spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.shell.core.autoconfigure.SpringShellAutoConfiguration
   shell:
     interactive:
       enabled: false

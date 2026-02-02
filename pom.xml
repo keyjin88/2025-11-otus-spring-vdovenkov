@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.1</version>
+        <version>4.0.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -24,6 +24,7 @@
         <module>hw4</module>
         <module>hw5</module>
         <module>hw6</module>
+        <module>hw7</module>
     </modules>
 
     <properties>
@@ -32,13 +33,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <lombok.version>1.18.42</lombok.version>
         <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
-        <spring.version>7.0.2</spring.version>
-        <spring-boot.version>4.0.1</spring-boot.version>
+        <spring-boot.version>4.0.2</spring-boot.version>
         <opencsv.version>5.12.0</opencsv.version>
-        <junit.version>6.0.1</junit.version>
-        <mockito.version>5.21.0</mockito.version>
-        <assertj.version>3.27.6</assertj.version>
-        <spring.shell.version>3.4.0</spring.shell.version>
+        <spring.shell.version>4.0.0</spring.shell.version>
         <checkstyle-plugin.version>3.6.0</checkstyle-plugin.version>
         <checkstyle.version>12.3.0</checkstyle.version>
         <checkstyle.config.url>
@@ -55,11 +52,6 @@
                 <optional>true</optional>
             </dependency>
             <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.opencsv</groupId>
                 <artifactId>opencsv</artifactId>
                 <version>${opencsv.version}</version>
@@ -74,21 +66,6 @@
                 <groupId>org.springframework.shell</groupId>
                 <artifactId>spring-shell-starter</artifactId>
                 <version>${spring.shell.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>${junit.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>${mockito.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.assertj</groupId>
-                <artifactId>assertj-core</artifactId>
-                <version>${assertj.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
