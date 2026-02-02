@@ -1,11 +1,10 @@
-package ru.vavtech.hw5.commands;
+package ru.vavtech.hw7.commands;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.core.command.annotation.Command;
 import org.springframework.stereotype.Component;
-import ru.vavtech.hw5.converters.AuthorConverter;
-import ru.vavtech.hw5.services.AuthorService;
-
+import ru.vavtech.hw7.converters.AuthorConverter;
+import ru.vavtech.hw7.services.AuthorService;
 
 import java.util.stream.Collectors;
 

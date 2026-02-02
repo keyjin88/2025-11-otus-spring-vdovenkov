@@ -1,11 +1,11 @@
-package ru.vavtech.hw6.commands;
+package ru.vavtech.hw7.commands;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.shell.core.command.annotation.Command;
 import org.springframework.shell.core.command.annotation.Option;
 import org.springframework.stereotype.Component;
-import ru.vavtech.hw6.converters.CommentConverter;
-import ru.vavtech.hw6.services.CommentService;
+import ru.vavtech.hw7.converters.CommentConverter;
+import ru.vavtech.hw7.services.CommentService;
 
 import java.util.stream.Collectors;
 

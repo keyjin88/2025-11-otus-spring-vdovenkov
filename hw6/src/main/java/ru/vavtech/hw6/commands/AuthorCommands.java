@@ -1,22 +1,22 @@
 package ru.vavtech.hw6.commands;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.shell.standard.ShellComponent;
-import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.core.command.annotation.Command;
+import org.springframework.stereotype.Component;
 import ru.vavtech.hw6.converters.AuthorConverter;
 import ru.vavtech.hw6.services.AuthorService;
 
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-@ShellComponent
+@Component
 public class AuthorCommands {
 
     private final AuthorService authorService;
 
     private final AuthorConverter authorConverter;
 
-    @ShellMethod(value = "Find all authors", key = "aa")
+    @Command(name = "aa", description = "Показать всех авторов", group = "Авторы")
     public String findAllAuthors() {
         return authorService.findAll().stream()
                 .map(authorConverter::authorToString)
