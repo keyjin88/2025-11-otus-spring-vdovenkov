@@ -43,6 +43,7 @@
             https://raw.githubusercontent.com/OtusTeam/Spring/master/checkstyle.xml
         </checkstyle.config.url>
         <mongock.version>4.3.8</mongock.version>
+        <flapdoodle.embed.mongo.spring4x.version>4.24.0</flapdoodle.embed.mongo.spring4x.version>
     </properties>
 
     <dependencyManagement>
@@ -78,6 +79,11 @@
                 <groupId>com.github.cloudyrock.mongock</groupId>
                 <artifactId>mongock-spring-v5</artifactId>
                 <version>${mongock.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.flapdoodle.embed</groupId>
+                <artifactId>de.flapdoodle.embed.mongo.spring4x</artifactId>
+                <version>${flapdoodle.embed.mongo.spring4x.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
