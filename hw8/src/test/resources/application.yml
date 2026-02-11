@@ -1,0 +1,24 @@
+spring:
+  data:
+    mongodb:
+      database: testdb
+  shell:
+    interactive:
+      enabled: false
+  autoconfigure:
+    exclude: org.springframework.shell.boot.StandardCommandsAutoConfiguration
+
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 6.0.18
+
+mongock:
+  runner-type: "InitializingBean"
+  change-logs-scan-package:
+    - ru.vavtech.hw8.mongock.changelog
+  mongo-db:
+    write-concern:
+      journal: false
+    read-concern: local
