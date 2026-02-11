@@ -2,7 +2,6 @@ package ru.vavtech.hw8.services;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import ru.vavtech.hw8.converters.CommentConverter;
 import ru.vavtech.hw8.exceptions.EntityNotFoundException;
 import ru.vavtech.hw8.models.Comment;
