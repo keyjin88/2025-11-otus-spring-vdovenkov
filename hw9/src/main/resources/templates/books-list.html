@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List of all books</title>
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome (CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .book-header {
+            margin-bottom: 30px;
+            color: #0d6efd; /* Цвет заголовка */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3 class="book-header">
+        <i class="fas fa-book"></i> Books
+    </h3>
+
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}">1</td>
+            <td th:text="${book.title}">Sample Book Title</td>
+            <td th:text="${book.author.fullName}">John Doe</td>
+            <td th:text="${book.genre.name}">Sample</td>
+            <td>
+                <div style="display: flex; gap: 5px;">
+                    <a th:href="@{/edit/{id}(id=${book.id})}" class="btn btn-sm btn-warning">
+                        <i class="fas fa-edit"></i> Edit
+                    </a>
+                    <form th:action="@{/delete/{id}(id=${book.id})}" method="post"
+                          onsubmit="return confirm('Are you sure you want to delete this book?');">
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="add" class="btn btn-primary">
+        <i class="fas fa-plus"></i> Add New Book
+    </a>
+</div>
+
+</body>
+<script>
+    function confirmDelete() {
+        return confirm("Are you sure you want to delete this book?");
+    }
+</script>
+</html>
