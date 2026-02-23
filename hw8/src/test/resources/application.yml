@@ -15,9 +15,7 @@ de:
         version: 6.0.18
 
 mongock:
-  runner-type: "InitializingBean"
-  change-logs-scan-package:
-    - ru.vavtech.hw8.mongock.changelog
+  enabled: false
   mongo-db:
     write-concern:
       journal: false

@@ -2,8 +2,10 @@ package ru.vavtech.hw8.repositories;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
 import org.springframework.boot.data.mongodb.test.autoconfigure.DataMongoTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.test.context.ActiveProfiles;
 import ru.vavtech.hw8.models.Genre;
 
 import java.util.stream.IntStream;
@@ -11,6 +13,8 @@ import java.util.stream.IntStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataMongoTest
+@ActiveProfiles("test")
+@Import(MongoTestDataInitializer.class)
 class GenreRepositoryTest {
     @Autowired
     private GenreRepository genreRepository;
