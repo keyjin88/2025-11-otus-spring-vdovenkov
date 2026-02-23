@@ -3,13 +3,17 @@ package ru.vavtech.hw8.repositories;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.mongodb.test.autoconfigure.DataMongoTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.test.context.ActiveProfiles;
 import ru.vavtech.hw8.models.Book;
 import ru.vavtech.hw8.models.Comment;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataMongoTest
+@ActiveProfiles("test")
+@Import(MongoTestDataInitializer.class)
 class CommentRepositoryTest {
 
     @Autowired

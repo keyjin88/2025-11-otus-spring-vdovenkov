@@ -28,6 +28,7 @@
         <module>hw8</module>
         <module>hw9</module>
         <module>hw10</module>
+        <module>hw11</module>
     </modules>
 
     <properties>
@@ -44,7 +45,7 @@
         <checkstyle.config.url>
             https://raw.githubusercontent.com/OtusTeam/Spring/master/checkstyle.xml
         </checkstyle.config.url>
-        <mongock.version>4.3.8</mongock.version>
+        <mongock.version>5.5.1</mongock.version>
         <flapdoodle.embed.mongo.spring4x.version>4.24.0</flapdoodle.embed.mongo.spring4x.version>
         <node.version>v25.6.1</node.version>
         <npm.version>11.10.1</npm.version>
@@ -53,6 +54,13 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.mongock</groupId>
+                <artifactId>mongock-bom</artifactId>
+                <version>${mongock.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
@@ -76,13 +84,13 @@
                 <version>${spring.shell.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cloudyrock.mongock</groupId>
-                <artifactId>mongodb-springdata-v3-driver</artifactId>
+                <groupId>io.mongock</groupId>
+                <artifactId>mongodb-springdata-v4-driver</artifactId>
                 <version>${mongock.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.cloudyrock.mongock</groupId>
-                <artifactId>mongock-spring-v5</artifactId>
+                <groupId>io.mongock</groupId>
+                <artifactId>mongock-springboot-v3</artifactId>
                 <version>${mongock.version}</version>
             </dependency>
             <dependency>
