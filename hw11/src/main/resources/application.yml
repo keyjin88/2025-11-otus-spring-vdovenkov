@@ -1,14 +1,9 @@
 spring:
   main:
     banner-mode: console
-  data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: library
-      username: root
-      password: password
-      authentication-database: admin
+  mongodb:
+    # Явный URI — самый надёжный способ передать учётные данные в Spring Boot 4
+    uri: mongodb://root:password@localhost:27017/library?authSource=admin
 
 server:
   port: 8080
