@@ -2,6 +2,24 @@
 
 Использовать WebFlux
 
+## Запуск приложения
+
+1. Поднять MongoDB в Docker (с аутентификацией root/password):
+   ```bash
+   # Первый запуск или после ошибки "Unauthorized" — пересоздать volume:
+   ./start-mongo.sh
+   # Или вручную:
+   docker-compose down -v && docker-compose up -d
+   ```
+   **Важно:** Пользователь root создаётся только при первом запуске на **пустом** volume.
+   Если видите ошибку "Command delete requires authentication" — выполните `docker-compose down -v` и запустите снова.
+2. Запустить приложение:
+   ```bash
+   mvn spring-boot:run
+   ```
+
+3. Открыть в браузере: http://localhost:8080
+
 ***Цель:***
 
 Цель: разрабатывать Responsive и Resilent приложения на реактивном стеке Spring c помощью Spring Web Flux и Reactive Spring Data Repositories
