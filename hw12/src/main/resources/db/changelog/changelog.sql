@@ -35,6 +35,17 @@ CREATE TABLE comments
     CONSTRAINT book_fk FOREIGN KEY (book_id) REFERENCES books (id) ON DELETE CASCADE
 );
 
+--changeset AV:2026-02-28--01-create-users
+CREATE TABLE users
+(
+    id       BIGINT AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role     VARCHAR(50)  NOT NULL,
+    CONSTRAINT user_pk PRIMARY KEY (id),
+    CONSTRAINT user_username_unique UNIQUE (username)
+);
+
 --changeset AV:2026-01-13--02-populate-db context:!test
 INSERT INTO authors(full_name)
 VALUES ('Lewis Carroll'),
@@ -56,3 +67,8 @@ VALUES ('Comment #1 to book 1', 1),
        ('Comment #2 to book 1', 1),
        ('Comment #3 to book 1', 1),
        ('Comment #1 to book 2', 2);
+
+-- Пользователи: admin/password, user/password (пароли закодированы BCrypt)
+INSERT INTO users(username, password, role)
+VALUES ('admin', '$2a$10$VPsdXQSZHaCm7O/kwAVZrOr9ES2HCWN0OnfA/bI3r8m5Dvil5xyIq', 'ROLE_USER'),
+       ('user', '$2a$10$VPsdXQSZHaCm7O/kwAVZrOr9ES2HCWN0OnfA/bI3r8m5Dvil5xyIq', 'ROLE_USER');

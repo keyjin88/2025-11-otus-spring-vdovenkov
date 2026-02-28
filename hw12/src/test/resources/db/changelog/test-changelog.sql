@@ -20,3 +20,7 @@ INSERT INTO comments(book_id, text)
 VALUES (1, 'Comment #1 to book 1'),
        (1, 'Comment #2 to book 1'),
        (2, 'Comment #1 to book 2');
+
+-- Пользователь для тестов: testuser/password
+INSERT INTO users(username, password, role)
+VALUES ('testuser', '$2a$10$VPsdXQSZHaCm7O/kwAVZrOr9ES2HCWN0OnfA/bI3r8m5Dvil5xyIq', 'ROLE_USER');
